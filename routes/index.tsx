@@ -5,10 +5,29 @@ import Counter from "../islands/Counter.tsx";
 
 export default function Home() {
   return (
-    <div class={tw`w-full h-screen flex justify-center bg-gray-900 items-center py-4 px-4 md:(py-4 px-40) lg:(py-4 px-40)`}>
-      <div class={tw`w-full h-screen md:(h-80) lg:(h-80) flex flex-row shadow-2xl bg-black rounded-xl`}>
+    <div class={tw`w-full h-screen flex justify-center bg-gray-900 items-center py-4 px-4 md:(py-4 px-40) lg:(py-4 px-40) relative`}>
+      
+      <div class={tw`w-full h-screen md:(h-80) lg:(h-80) flex flex-row shadow-2xl bg-black rounded-xl relative`}>
+        {/* Header Button */}
+        <div class={tw`absolute inset-x-0 top-0 md:-top-12 w-full h-auto`}>
+          <div class={tw`w-full h-auto flex justify-center md:justify-between items-center px-6 md:px-12`}>
+            <a href="https://github.com/Ikziriv/fresh-portfolio-site" target="_blank" class={tw`cursor-pointer flex flex-row space-x-4 w-auto h-auto bg-transparent md:bg-black md:rounded-t-xl py-4 px-4 md:px-8 shadow`}>
+              <span class={tw`w-auto h-auto`}>
+                <svg class={tw`bi bi-git w- 4 h-4 text-gray-100 md:text-gray-200 fill-current`} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M15.698 7.287 8.712.302a1.03 1.03 0 0 0-1.457 0l-1.45 1.45 1.84 1.84a1.223 1.223 0 0 1 1.55 1.56l1.773 1.774a1.224 1.224 0 0 1 1.267 2.025 1.226 1.226 0 0 1-2.002-1.334L8.58 5.963v4.353a1.226 1.226 0 1 1-1.008-.036V5.887a1.226 1.226 0 0 1-.666-1.608L5.093 2.465l-4.79 4.79a1.03 1.03 0 0 0 0 1.457l6.986 6.986a1.03 1.03 0 0 0 1.457 0l6.953-6.953a1.031 1.031 0 0 0 0-1.457"/>
+                </svg>
+              </span>
+              <span class={tw`uppercase font-bold text-xs text-white`}>
+                <small class={tw`text-gray-100 md:text-gray-200`}>Source Code</small>
+              </span>
+            </a>
+          </div>
+        </div>
+        {/* End Header Button */}
+        
+        {/* Main Card */}
         <div class={tw`grid grid-cols-12 md:gap-4 w-full h-full`}>
-          <div class={tw`col-span-full md:col-span-4 w-full h-auto md:h-full flex justify-center items-center px-4 md:px-8`}>
+          <div class={tw`col-span-full md:col-span-4 w-full h-auto md:h-full flex justify-center items-end md:items-center px-4 md:px-8`}>
             <div class={tw`rounded-full w-40 h-40 flex justify-center items-center shadow border border-zinc-900 relative`}>
               <img
                 src="https://avatars.githubusercontent.com/u/12673169?v=4"
@@ -63,13 +82,16 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            {/* Footer Button */}
             <div class={tw`absolute inset-x-0 bottom-0 md:-bottom-24 w-full h-auto px-4 md:px-8 py-2`}>
               <div class={tw`w-full h-auto flex justify-center items-center rounded-xl bg-transparent py-2`}>
                 <Counter start={8} />
               </div>
             </div>
+            {/* End Footer Button */}
           </div>
         </div>
+        {/* End Main Card */}
       </div>
     </div>
   );
